@@ -2,25 +2,19 @@ do
 
 function run(msg, matches)
 local reply_id = msg['id']
-local text = 'بلی؟'
---در اینجا میتونین جواب رو تعیین کنید
-if matches[1] == 'سلید' or 'solid' or 'سعید' or 'saeid' or 'saeed' then
+local amir = {'ble😝','Haa!','Chie😙','jn🙄','bale','?','Chi Mikhay 😛','BenaL dadach'}
+
+if matches[1] == 'amir' then
     if not is_sudo(msg) then
---در این قسمت میتونید اسم خودتون رو بزارید
---یادتون باشه وقتی اسم خودتون رو گذاشتید پترن هارو هم تغییر بدید
-reply_msg(reply_id, text, ok_cb, false)
+return amir[math.random(#amir)]
 end
 end 
 end
 return {
 patterns = {
-    "^سلید$",
-    "^سعید$",
-"^([Ss]aeid)$",
-"^([Ss]aeed)$",
-"^([Ss]olid)$"
+    "^[Aa]mir$",
 },
 run = run
 }
 
-end
+end 
